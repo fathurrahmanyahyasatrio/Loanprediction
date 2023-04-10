@@ -7,6 +7,8 @@ import pickle
 import warnings
 warnings.filterwarnings("ignore")
 
+st.write("This file has been made by myself")
+
 # Menulis judul
 st.markdown("<h1 style='text-align: center; '> Loan Prediction </h1>", unsafe_allow_html=True)
 st.markdown('---'*10)
