@@ -33,7 +33,7 @@ if pilihan == 'Prediction from CSV File':
             if hasil[i] == 1:
                 st.write('Customer_ID',dataku['Loan_ID'][i],'= Approved')
             else:
-                st.write('Customer_ID',dataku['Loan_ID'][i],'= Reject')
+                st.write('Customer_ID',dataku['Loan_ID'][i],'= Rejected')
     else:
         st.error('File is empty, please choose the valid file')
         #st.markdown('File is empty, please choose the valid file')
