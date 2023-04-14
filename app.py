@@ -7,7 +7,6 @@ import pickle
 import warnings
 warnings.filterwarnings("ignore")
 
-st.write("This file has been made by myself")
 
 # Menulis judul
 st.markdown("<h1 style='text-align: center; '> Loan Prediction </h1>", unsafe_allow_html=True)
@@ -18,15 +17,15 @@ my_model = pickle.load(open('model_klasifikasi_loan.pkl', 'rb'))
 
 # Pilihan utama
 
-pilihan = st.selectbox('Apa yang ingin Anda lakukan?',['Prediksi dari file csv','Input Manual'])
+pilihan = st.selectbox('The process',['Prediction from CSV File','Input Manual'])
 
-if pilihan == 'Prediksi dari file csv':
+if pilihan == 'Prediction from CSV File':
     # Mengupload file
-    upload_file = st.file_uploader('Pilih file csv', type='csv')
+    upload_file = st.file_uploader('Choose CSV File', type='csv')
     if upload_file is not None:
         dataku = pd.read_csv(upload_file)
         st.write(dataku)
-        st.success('File berhasil diupload')
+        st.success('Upload Success')
         hasil = my_model.predict(dataku)
         #st.write('Prediksi',hasil)
         # Keputusan
@@ -36,8 +35,8 @@ if pilihan == 'Prediksi dari file csv':
             else:
                 st.write('Customer_ID',dataku['Loan_ID'][i],'= Reject')
     else:
-        st.error('File yang diupload kosong, silakan pilih file yang valid')
-        #st.markdown('File yang diupload kosong, silakan pilih file yang valid')
+        st.error('File is empty, please choose the valid file')
+        #st.markdown('File is empty, please choose the valid file')
 else:
    # Baris Pertama
    with st.container():
