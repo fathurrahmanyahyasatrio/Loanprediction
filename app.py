@@ -8,9 +8,9 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Read file from XLSX
-pilihan = st.selectbox ('The process', ['Prediction from XLSX File', 'Input Manual'])
+pilihan = st.selectbox('The process', ['Prediction from XLSX File', 'Input Manual'])
 if pilihan == 'Prediction from XLSX File':
-    upload_file = st.file_uploader ('Choose XLSX File', type ='XLSX')
+    upload_file = st.file_uploader('Choose XLSX File')
     if upload_file is not None:
         mydata = pd.read_excel(upload_file)
         st.write(mydata)
