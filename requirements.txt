@@ -9,3 +9,4 @@ xgboost==1.7.4
 scipy==1.7.3
 streamlit==1.12.2
 lightgbm==3.2.1
+openpyxl==3.0.10
