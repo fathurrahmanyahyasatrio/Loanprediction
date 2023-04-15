@@ -7,6 +7,16 @@ import pickle
 import warnings
 warnings.filterwarnings("ignore")
 
+# Menulis judul
+st.markdown("<h1 style='text-align: center; '> Loan Prediction </h1>", unsafe_allow_html=True)
+st.markdown('---'*10)
+
+# Load model
+my_model = pickle.load(open('model_klasifikasi_loan.pkl', 'rb'))
+
+# Pilihan utama
+
+
 # Read file from XLSX
 pilihan = st.selectbox('The process', ['Prediction from XLSX File', 'Input Manual'])
 if pilihan == 'Prediction from XLSX File':
@@ -25,17 +35,9 @@ if pilihan == 'Prediction from XLSX File':
         st.error('File is empty, please choose the valid file')
         #st.markdown('File is empty, please choose the valid file')
 
-# Menulis judul
-st.markdown("<h1 style='text-align: center; '> Loan Prediction </h1>", unsafe_allow_html=True)
-st.markdown('---'*10)
-
-# Load model
-my_model = pickle.load(open('model_klasifikasi_loan.pkl', 'rb'))
-
-# Pilihan utama
 
 pilihan = st.selectbox('The process',['Prediction from CSV File','Input Manual'])
-
+"""
 if pilihan == 'Prediction from CSV File':
     # Mengupload file
     upload_file = st.file_uploader('Choose CSV File', type='csv')
@@ -54,6 +56,7 @@ if pilihan == 'Prediction from CSV File':
     else:
         st.error('File is empty, please choose the valid file')
         #st.markdown('File is empty, please choose the valid file')
+"""
 else:
    # Baris Pertama
    with st.container():
