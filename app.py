@@ -36,27 +36,6 @@ if pilihan == 'Prediction from XLSX File':
         #st.markdown('File is empty, please choose the valid file')
 
 
-pilihan = st.selectbox('The process',['Prediction from CSV File','Input Manual'])
-"""
-if pilihan == 'Prediction from CSV File':
-    # Mengupload file
-    upload_file = st.file_uploader('Choose CSV File', type='csv')
-    if upload_file is not None:
-        dataku = pd.read_csv(upload_file)
-        st.write(dataku)
-        st.success('Upload Success')
-        hasil = my_model.predict(dataku)
-        #st.write('Prediksi',hasil)
-        # Keputusan
-        for i in range(len(hasil)):
-            if hasil[i] == 1:
-                st.write('Customer_ID',dataku['Loan_ID'][i],'= Approved')
-            else:
-                st.write('Customer_ID',dataku['Loan_ID'][i],'= Rejected')
-    else:
-        st.error('File is empty, please choose the valid file')
-        #st.markdown('File is empty, please choose the valid file')
-"""
 else:
    # Baris Pertama
    with st.container():
