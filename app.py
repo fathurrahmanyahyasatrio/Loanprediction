@@ -7,6 +7,23 @@ import pickle
 import warnings
 warnings.filterwarnings("ignore")
 
+# Read file from XLSX
+pilihan = st.selectbox ('The process', ['Prediction from XLSX File', 'Input Manual'])
+if pilihan == 'Prediction from XLSX File':
+    upload file = st.file_uploader ('Choose XLSX File', type ='XLSX')
+    if upload_file is not None:
+        mydata = pd.read_excel(upload_file)
+        st.write(mydata)
+        st.success('Upload Success')
+        result = my_model.predict(mydata)
+        for i in range(len(hasil)):
+            if hasil[i] == 1:
+                st.write('Customer_ID',dataku['Loan_ID'][i],'= Approved')
+            else:
+                st.write('Customer_ID',dataku['Loan_ID'][i],'= Rejected')
+    else:
+        st.error('File is empty, please choose the valid file')
+        #st.markdown('File is empty, please choose the valid file')
 
 # Menulis judul
 st.markdown("<h1 style='text-align: center; '> Loan Prediction </h1>", unsafe_allow_html=True)
