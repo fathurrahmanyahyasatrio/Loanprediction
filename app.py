@@ -26,8 +26,8 @@ if pilihan == 'Prediction from XLSX File':
         st.write(mydata)
         st.success('Upload Success')
         result = my_model.predict(mydata)
-        for i in range(len(hasil)):
-            if hasil[i] == 1:
+        for i in range(len(result)):
+            if result[i] == 1:
                 st.write('Customer_ID',dataku['Loan_ID'][i],'= Approved')
             else:
                 st.write('Customer_ID',dataku['Loan_ID'][i],'= Rejected')
