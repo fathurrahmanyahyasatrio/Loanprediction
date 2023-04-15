@@ -28,9 +28,9 @@ if pilihan == 'Prediction from XLSX File':
         result = my_model.predict(mydata)
         for i in range(len(result)):
             if result[i] == 1:
-                st.write('Customer_ID',dataku['Loan_ID'][i],'= Approved')
+                st.write('Customer_ID',mydata['Loan_ID'][i],'= Approved')
             else:
-                st.write('Customer_ID',dataku['Loan_ID'][i],'= Rejected')
+                st.write('Customer_ID',mydata['Loan_ID'][i],'= Rejected')
     else:
         st.error('File is empty, please choose the valid file')
         #st.markdown('File is empty, please choose the valid file')
